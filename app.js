@@ -3,58 +3,24 @@
 window.addEventListener("load", start());
 
 
-function start(){
-const Lucario = {
-    name: `Lucario`,
-    dexindex: `0448`,
-    desciption: `It is said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.`,
-    ability: [`Inner Focus`, ` SteadFast`],
-    image: `<img src = https://archives.bulbagarden.net/media/upload/thumb/archive/4/42/20100122172129%210448Lucario.png/120px-0448Lucario.png>`,
-    footprint: `<img src =https://archives.bulbagarden.net/media/upload/f/fd/F0448.png>`,
-    type: `Fighting`,
-    subtype: `Steel`,
-    weakness: [`Fire`, ` Fighting`, ` Ground`],
-    gender: [`Male`, ` Female `],
-    weight: `54`,
-    height: `120`,
-    generation: `4`,
-    spilversion: `Both`,
-    canEvolve: false,
-    statsHP: 5,
-    statsAttack: 7,
-    statsDefence: 5,
-    statsSpecialAttack: 7,
-    statsSpecialDefence: 5,
-    statsSpeed: 6
-};
-const NotLucario = {
-    name: `NotLucario`,
-    dexindex: `0448`,
-    desciption: `It is said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.`,
-    ability: [`Inner Focus`, ` SteadFast`],
-    image: `<img src = https://archives.bulbagarden.net/media/upload/thumb/archive/4/42/20100122172129%210448Lucario.png/120px-0448Lucario.png>`,
-    footprint: `<img src =https://archives.bulbagarden.net/media/upload/f/fd/F0448.png>`,
-    type: `Fighting`,
-    subtype: `Steel`,
-    weakness: [`Fire`, ` Fighting`, ` Ground`],
-    gender: [`Male`, ` Female `],
-    weight: `54`,
-    height: `120`,
-    generation: `4`,
-    spilversion: `Both`,
-    canEvolve: false,
-    statsHP: 5,
-    statsAttack: 7,
-    statsDefence: 5,
-    statsSpecialAttack: 7,
-    statsSpecialDefence: 5,
-    statsSpeed: 6
-};
-    showPokemon(Lucario);
-    showPokemon(NotLucario);
-    console.log(JSON.stringify(NotLucario, " "));
+async function start(){
+ const pokemon = await getPokemon();
+ showAllPokemon(pokemon);
 }
 
+async function getPokemon(){
+    const response = await fetch("https://raw.githubusercontent.com/Blue-Grizzly/Pokemon-data-app/main/objects.JSON");
+    const data = await response.json();
+    console.log(data);
+    return data;
+}
+
+function showAllPokemon(pokemonList) {
+    //loop through all users and create an article with content for each
+    for (const pokemon of pokemonList) {
+        showPokemon(pokemon);
+    }
+}
 
 function showPokemon(pokemon) {
     const myHTML = /*html*/`
@@ -70,7 +36,6 @@ function showPokemon(pokemon) {
     console.log(pokemon);
     function clickPokemon(){
         document.querySelector("#detailView").showModal();
-        // document.querySelector("#pokemonList article:last-child").removeEventListener("click", clickPokemon);
         pokemonDialog(pokemon); 
     }
 }
