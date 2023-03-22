@@ -1,17 +1,20 @@
 "use strict"
 
+window.addEventListener("load", start());
 
+
+function start(){
 const Lucario = {
     name: `Lucario`,
     dexindex: `0448`,
     desciption: `It is said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.`,
-    ability: [`Inner Focus `, `SteadFast`],
+    ability: [`Inner Focus`, ` SteadFast`],
     image: `<img src = https://archives.bulbagarden.net/media/upload/thumb/archive/4/42/20100122172129%210448Lucario.png/120px-0448Lucario.png>`,
     footprint: `<img src =https://archives.bulbagarden.net/media/upload/f/fd/F0448.png>`,
     type: `Fighting`,
     subtype: `Steel`,
-    weakness: [`Fire `, `Fighting `, `Ground `],
-    gender: `Male`,
+    weakness: [`Fire`, ` Fighting`, ` Ground`],
+    gender: [`Male`, ` Female `],
     weight: `54`,
     height: `120`,
     generation: `4`,
@@ -24,28 +27,59 @@ const Lucario = {
     statsSpecialDefence: 5,
     statsSpeed: 6
 };
+const NotLucario = {
+    name: `NotLucario`,
+    dexindex: `0448`,
+    desciption: `It is said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.`,
+    ability: [`Inner Focus`, ` SteadFast`],
+    image: `<img src = https://archives.bulbagarden.net/media/upload/thumb/archive/4/42/20100122172129%210448Lucario.png/120px-0448Lucario.png>`,
+    footprint: `<img src =https://archives.bulbagarden.net/media/upload/f/fd/F0448.png>`,
+    type: `Fighting`,
+    subtype: `Steel`,
+    weakness: [`Fire`, ` Fighting`, ` Ground`],
+    gender: [`Male`, ` Female `],
+    weight: `54`,
+    height: `120`,
+    generation: `4`,
+    spilversion: `Both`,
+    canEvolve: false,
+    statsHP: 5,
+    statsAttack: 7,
+    statsDefence: 5,
+    statsSpecialAttack: 7,
+    statsSpecialDefence: 5,
+    statsSpeed: 6
+};
+    showPokemon(Lucario);
+    showPokemon(NotLucario);
+    console.log(JSON.stringify(NotLucario, " "));
+}
 
-window.addEventListener("load", showPokemon(Lucario));
 
 function showPokemon(pokemon) {
     const myHTML = /*html*/`
-    <p>${pokemon.image}Pokémon name: ${pokemon.name}</p>
-
+    <article class="grid-item">
+        ${pokemon.image}
+        <h2>${pokemon.name}</h2>
+        <p>#${pokemon.dexindex}</p>
+        <p>Type: ${pokemon.type}, ${pokemon.subtype}</p>
+    </article>
     `;
-    document.querySelector("body").insertAdjacentHTML("beforeend", myHTML);
-    document.querySelector("body:last-child p").addEventListener("click", addPokemon);
+    document.querySelector("#pokemonList").insertAdjacentHTML("beforeend", myHTML);
+    document.querySelector("#pokemonList article:last-child").addEventListener("click", clickPokemon);
+    console.log(pokemon);
+    function clickPokemon(){
+        document.querySelector("#detailView").showModal();
+        // document.querySelector("#pokemonList article:last-child").removeEventListener("click", clickPokemon);
+        pokemonDialog(pokemon); 
+    }
 }
 
-console.log(Lucario);
-
-function addPokemon(){
-    document.querySelector("dialog").open = true;
-    pokemonDialog(Lucario); //very temp solution
-}
 
 
 function pokemonDialog(pokemon){
     const myHTML = /*html*/`
+    <section>
         <ul>
             <li>${pokemon.image}</li>
             <li>Pokémon name: ${pokemon.name}</li>
@@ -68,6 +102,24 @@ function pokemonDialog(pokemon){
             <li>Special Defence: ${pokemon.statsSpecialDefence}</li>
             <li>Speed: ${pokemon.statsSpeed}</li>
         </ul>
+        <form method="dialog">
+		<button>Close</button>
+        </form>
+    </section>
     `;
-    document.querySelector("dialog").insertAdjacentHTML("beforeend", myHTML);
+    document.querySelector("#detailView").addEventListener("close", closedModal)
+    document.querySelector("#detailView").insertAdjacentHTML("beforeend", myHTML);
 }
+
+function closedModal(){
+    document.querySelector("#detailView section:last-child").remove();
+}
+
+
+// missing functions I think I want
+
+// function fetchJSON(){}
+// function calcStats(){}
+// function showType(){}
+// function showDesciption(){}
+// function booleanTranslate(){}
