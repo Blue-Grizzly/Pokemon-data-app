@@ -45,7 +45,7 @@
     "statsSpeed":6
     },
     {
-    "name":"Lucario",
+    "name":"ReallyNotLucario",
     "dexindex":"0448",
     "desciption":"It is said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.",
     "ability":["Inner Focus"," SteadFast"],
@@ -68,7 +68,7 @@
     "statsSpeed":6
     },
     
-    {"name":"NotLucario",
+    {"name":"ReallyReallyNotLucario",
     "dexindex":"0448",
     "desciption":"It is said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.",
     "ability":["Inner Focus"," SteadFast"],
