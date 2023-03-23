@@ -23,7 +23,7 @@ function showAllPokemon(pokemonList) {
 function showPokemon(pokemon) {
     const myHTML = /*html*/`
     <article class="grid-item">
-        ${pokemon.image}
+        <img src=${pokemon.image}>
         <h2>${pokemon.name}</h2>
         <p>#${pokemon.dexindex}</p>
         <p>Type: ${pokemon.type}, ${pokemon.subtype}</p>
@@ -40,15 +40,19 @@ function showPokemon(pokemon) {
 
 
 function pokemonDialog(pokemon){
+
+
+    const calculatedStats = pokemon.statsAttack+pokemon.statsHP+pokemon.statsSpecialAttack+pokemon.statsSpecialDefence+pokemon.statsSpeed;
+
     const myHTML = /*html*/`
     <section>
         <ul>
-            <li>${pokemon.image}</li>
+            <img src=${pokemon.image}>
             <li>Pokémon name: ${pokemon.name}</li>
             <li>Pokédex #${pokemon.dexindex}</li>
             <li>Pokédex entry: ${pokemon.desciption}</li>
             <li>Ability: ${pokemon.ability}</li>
-            <li>Footprint: ${pokemon.footprint}</li>
+            <li>Footprint: <img src=${pokemon.footprint}></li>
             <li>Type: ${pokemon.type}</li>
             <li>Subtype: ${pokemon.subtype}</li>
             <li>Weakness: ${pokemon.weakness}</li>
@@ -63,6 +67,7 @@ function pokemonDialog(pokemon){
             <li>Special Attack: ${pokemon.statsSpecialAttack}</li>
             <li>Special Defence: ${pokemon.statsSpecialDefence}</li>
             <li>Speed: ${pokemon.statsSpeed}</li>
+            <li>Total stats:${calculatedStats}</li>
         </ul>
         <form method="dialog">
 		<button>Close</button>
@@ -80,7 +85,6 @@ function closedModal(){
 
 // missing functions I think I want
 
-// function fetchJSON(){}
 // function calcStats(){}
 // function showType(){}
 // function showDesciption(){}

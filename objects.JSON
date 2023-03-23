@@ -14,12 +14,12 @@
     "generation":"4",
     "spilversion":"Both",
     "canEvolve":false,
-    "statsHP":5,
-    "statsAttack":7,
-    "statsDefence":5,
-    "statsSpecialAttack":7,
-    "statsSpecialDefence":5,
-    "statsSpeed":6
+    "statsHP":70,
+    "statsAttack":110,
+    "statsDefence":70,
+    "statsSpecialAttack":115,
+    "statsSpecialDefence":70,
+    "statsSpeed":90
     },
     
     {"name":"Arcanine",
