@@ -11,12 +11,10 @@ async function start(){
 async function getPokemon(){
     const response = await fetch("https://raw.githubusercontent.com/Blue-Grizzly/Pokemon-data-app/main/objects.JSON");
     const data = await response.json();
-    console.log(data);
     return data;
 }
 
 function showAllPokemon(pokemonList) {
-    //loop through all users and create an article with content for each
     for (const pokemon of pokemonList) {
         showPokemon(pokemon);
     }
@@ -33,7 +31,6 @@ function showPokemon(pokemon) {
     `;
     document.querySelector("#pokemonList").insertAdjacentHTML("beforeend", myHTML);
     document.querySelector("#pokemonList article:last-child").addEventListener("click", clickPokemon);
-    console.log(pokemon);
     function clickPokemon(){
         document.querySelector("#detailView").showModal();
         pokemonDialog(pokemon); 
