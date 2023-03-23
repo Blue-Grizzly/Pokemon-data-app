@@ -1,20 +1,45 @@
 html{
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgb(174,238,235);
+    font-family: Arial, Helvetica, sans-serif;    background: rgb(174,238,235);
     background: linear-gradient(90deg, rgba(174,238,235,1) 0%, rgba(96,222,240,1) 50%, rgba(148,187,233,1) 100%);
 }
 
 dialog{
     background: rgb(184, 237, 247);
-    background: linear-gradient(355deg, rgba(242,242,242,1) 0%, rgba(112,230,216,1) 35%, rgba(0,212,255,1) 100%);    width: 65vw;
+    background: linear-gradient(60deg, #C22E28 0%, #B7B7CE 100%);    width: 65vw;
     padding: 2em 1em;
+    
 
 }
 
-.grid-container{
+.grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
 }
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1500px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
 
 .grid-item {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
@@ -70,6 +95,12 @@ dialog::backdrop {
 
 ul{
     list-style: none;
+
+}
+
+li{
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 
 }
 
