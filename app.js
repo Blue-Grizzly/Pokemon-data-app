@@ -1,6 +1,6 @@
 "use strict"
 
-window.addEventListener("load", start());
+window.addEventListener("load", start);
 
 
 async function start(){
@@ -26,7 +26,7 @@ function showPokemon(pokemon) {
         <img src=${pokemon.image}>
         <h2>${pokemon.name}</h2>
         <p>#${pokemon.dexindex}</p>
-        <p>Type: ${pokemon.type}, ${pokemon.subtype}</p>
+        <p>Type: ${pokemon.type} ${pokemon.subtype}</p>
     </article>
     `;
     document.querySelector("#pokemonList").insertAdjacentHTML("beforeend", myHTML);
@@ -43,7 +43,51 @@ function pokemonDialog(pokemon){
 
 
     const calculatedStats = pokemon.statsAttack+pokemon.statsHP+pokemon.statsSpecialAttack+pokemon.statsSpecialDefence+pokemon.statsSpeed;
+    
+    let typeTheme
+    
+    if(pokemon.type == "Fire" || pokemon.type == "fire"){
+        typeTheme = "FireTheme"
+    } else if(pokemon.type == "Water" || pokemon.type == "water") {
+        typeTheme = "WaterTheme"
+    } else if(pokemon.type == "Electric" || pokemon.type == "electric") {
+        typeTheme = "ElectricTheme"
+    } else if(pokemon.type == "Ground" || pokemon.type == "ground") {
+        typeTheme = "GroundTheme"
+    } else if(pokemon.type == "Rock" || pokemon.type == "rock") {
+        typeTheme = "RockTheme"
+    } else if(pokemon.type == "Normal" || pokemon.type == "normal") {
+        typeTheme = "NormalTheme"
+    } else if(pokemon.type == "Grass" || pokemon.type == "grass") {
+        typeTheme = "GrassTheme"
+    } else if(pokemon.type == "Ice" || pokemon.type == "ice") {
+        typeTheme = "IceTheme"
+    } else if(pokemon.type == "Fighting" || pokemon.type == "fighting") {
+        typeTheme = "FightingTheme"
+    } else if(pokemon.type == "Poison" || pokemon.type == "poison") {
+        typeTheme = "PoisonTheme"
+    } else if(pokemon.type == "Flying" || pokemon.type == "flying") {
+        typeTheme = "FlyingTheme"
+    } else if(pokemon.type == "Psychic" || pokemon.type == "psychic") {
+        typeTheme = "PsyichicTheme"
+    } else if(pokemon.type == "Bug" || pokemon.type == "bug") {
+        typeTheme = "BugTheme"
+    } else if(pokemon.type == "Ghost" || pokemon.type == "ghost") {
+        typeTheme = "GhostTheme"
+    } else if(pokemon.type == "Dark" || pokemon.type == "dark") {
+        typeTheme = "DarkTheme"
+    } else if(pokemon.type == "Dragon" || pokemon.type == "dragon") {
+        typeTheme = "DragonTheme"
+    } else if(pokemon.type == "Steel" || pokemon.type == "steel") {
+        typeTheme = "SteelTheme"
+    } else if(pokemon.type == "Fairy" || pokemon.type == "fairy") {
+        typeTheme = "FairyTheme"
+    } else{
+        typeTheme = "NormalTheme"
+    }
 
+    document.querySelector("#detailView").classList.add(typeTheme);
+    
     const myHTML = /*html*/`
     <section>
         <ul>
@@ -79,7 +123,10 @@ function pokemonDialog(pokemon){
 }
 
 function closedModal(){
-    document.querySelector("#detailView section:last-child").remove();
+    document.querySelector("#detailView").classList.remove
+        ("NormalTheme", "FireTheme", "WaterTheme", "GrassTheme", "ElectricTheme", "IceTheme", "FightingTheme", "PoisonTheme", "GroundTheme", "FlyingTheme", "PsychicTheme", "BugTheme", "RockTheme", "GhostTheme", "DarkTheme", "DragonTheme", "SteelTheme", "FairyTheme");
+    //All the themes
+        document.querySelector("#detailView section:last-child").remove();
 }
 
 
