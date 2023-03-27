@@ -1,6 +1,10 @@
 html{
-    font-family: Arial, Helvetica, sans-serif;    background: rgb(174,238,235);
-    background: linear-gradient(90deg, rgba(174,238,235,1) 0%, rgba(96,222,240,1) 50%, rgba(148,187,233,1) 100%);
+    font-family: Arial, Helvetica, sans-serif;    
+    background: rgb(200, 50, 50);
+    /* background: linear-gradient(90deg, rgba(174,238,235,1) 0%, rgba(96,222,240,1) 50%, rgba(148,187,233,1) 100%); */
+    border-color: rgb();
+
+
 }
 
 dialog{
@@ -10,99 +14,103 @@ dialog{
 }
 
 img{
-    
+    width: 20vw;
+    /* pictures need tweaking */
 }
 
+img.footPrint{
+    width: 50px;
+}
 
 /* ----------------------- Themes--------------------- */
 
 
 .FireTheme{
-    background: radial-gradient(circle, #EE8130 0%, #EE8130 70%, black 100%);     
-
+    background: rgb(238,129,48);
+    background: radial-gradient(circle, rgba(238,129,48,1) 0%, rgba(238,129,48,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .NormalTheme{
-    background: radial-gradient(circle, #A8A77A 0%, #A8A77A 70%, black 100%);     
-
+    background: rgb(168,167,122);
+    background: radial-gradient(circle, rgba(168,167,122,1) 0%, rgba(168,167,122,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .WaterTheme{
-    background: radial-gradient(circle, #6390F0 0%, #6390F0 70%, black 100%);     
-
+    background: rgb(99,144,240);
+    background: radial-gradient(circle, rgba(99,144,240,1) 0%, rgba(99,144,240,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .ElectricTheme{
-    background: radial-gradient(circle, #F7D02C 0%, #F7D02C 70%, black 100%);     
-
+    background: rgb(247,208,44);
+    background: radial-gradient(circle, rgba(247,208,44,1) 0%, rgba(247,208,44,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .GrassTheme{
-    background: radial-gradient(circle, #7AC74C 0%, #7AC74C 70%, black 100%);     
- 
+    background: rgb(122,199,76);
+    background: radial-gradient(circle, rgba(122,199,76,1) 0%, rgba(122,199,76,1) 70%, rgba(223, 223, 223) 100%); 
 }
 
 .IceTheme{
-    background: radial-gradient(circle, #96D9D6 0%, #96D9D6 70%, black 100%);     
- 
+    background: rgb(150,217,214);
+    background: radial-gradient(circle, rgba(150,217,214,1) 0%, rgba(150,217,214,1) 70%, rgba(223, 223, 223) 100%); 
 }
 
 .FightingTheme{
-    background: radial-gradient(circle, #C22E28 0%, #C22E28 70%, black 100%);     
-}
+    background: rgb(194,46,40);
+    background: radial-gradient(circle, rgba(194,46,40,1) 0%, rgba(194,46,40,1) 70%, rgba(223, 223, 223) 100%);}
 
 .PoisonTheme{
-    background: radial-gradient(circle, #A33EA1 0%, #A33EA1 70%, black 100%);     
-
+    background: rgb(163,62,161);
+    background: radial-gradient(circle, rgba(163,62,161,1) 0%, rgba(163,62,161,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .GroundTheme{
-    background: radial-gradient(circle, #E2BF65 0%, #E2BF65 70%, black 100%);      
-}
+    background: rgb(226,191,101);
+    background: radial-gradient(circle, rgba(226,191,101,1) 0%, rgba(226,191,101,1) 70%, rgba(223, 223, 223) 100%);}
 
 
 .FlyingTheme{
-    background: radial-gradient(circle, #A98FF3 0%, #A98FF3 70%, black 100%);      
-   
+    background: rgb(169,143,243);
+    background: radial-gradient(circle, rgba(169,143,243,1) 0%, rgba(169,143,243,1) 70%, rgba(223, 223, 223) 100%);   
 }
 
 .PsychicTheme{
-    background: radial-gradient(circle, #F95587 0%, #F95587 70%, black 100%);      
-
+    background: rgb(249,85,135);
+    background: radial-gradient(circle, rgba(249,85,135,1) 0%, rgba(249,85,135,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .BugTheme{
-    background: radial-gradient(circle, #A6B91A 0%, #A6B91A 70%, black 100%);         
-}
+    background: rgb(166,185,26);
+    background: radial-gradient(circle, rgba(166,185,26,1) 0%, rgba(166,185,26,1) 70%, rgba(223, 223, 223) 100%);}
 
 .RockTheme{
-    background: radial-gradient(circle, #B6A136 0%, #B6A136 70%, black 100%);         
-
+    background: rgb(182,161,54);
+    background: radial-gradient(circle, rgba(182,161,54,1) 0%, rgba(182,161,54,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .GhostTheme{
-    background: radial-gradient(circle, #735797 0%, #735797 70%, black 100%);         
-
+    background: rgb(115,87,151);
+    background: radial-gradient(circle, rgba(115,87,151,1) 0%, rgba(115,87,151,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .DragonTheme{
-    background: radial-gradient(circle, #6F35FC 0%, #6F35FC 70%, black 100%);         
-
+    background: rgb(111,53,252);
+    background: radial-gradient(circle, rgba(111,53,252,1) 0%, rgba(111,53,252,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .DarkTheme{
-    background: radial-gradient(circle, #705746 0%, #705746 70%, black 100%);         
-
+    background: rgb(112,87,70);
+    background: radial-gradient(circle, rgba(112,87,70,1) 0%, rgba(112,87,70,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .SteelTheme{
-    background: radial-gradient(circle, #B7B7CE 0%, #B7B7CE 70%, black 100%);         
-
+    background: rgb(183,183,206);
+    background: radial-gradient(circle, rgba(183,183,206,1) 0%, rgba(183,183,206,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .FairyTheme{
-    background: radial-gradient(circle, #D685AD 0%, #D685AD 70%, black 100%);         
-
+    background: rgb(214,133,173);
+    background: radial-gradient(circle, rgba(214,133,173,1) 0%, rgba(214,133,173,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 /* -------------------------------------------------------------------- */
@@ -141,8 +149,7 @@ img{
 .grid-item {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
     padding: 1.5em;
-    background: linear-gradient(140deg, rgba(242,242,242,1) 0%, rgba(112,230,216,1) 35%, rgba(0,212,255,1) 100%);    
-    cursor: pointer;
+    background: rgba(223, 223, 223);
 }
 
 .grid-item:hover {
@@ -187,7 +194,7 @@ button {
 }
 
 dialog::backdrop {
-    background: rgba(47, 51, 51, 0.8);
+    background: rgb(47, 51, 51);
 }
 
 ul{

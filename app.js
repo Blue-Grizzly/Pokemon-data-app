@@ -96,7 +96,7 @@ function pokemonDialog(pokemon){
             <li>Pokédex #${pokemon.dexindex}</li>
             <li>Pokédex entry: ${pokemon.desciption}</li>
             <li>Ability: ${pokemon.ability}</li>
-            <li>Footprint: <img src=${pokemon.footprint}></li>
+            <li>Footprint: <img src=${pokemon.footprint} class="footPrint"></li>
             <li>Type: ${pokemon.type}</li>
             <li>Subtype: ${pokemon.subtype}</li>
             <li>Weakness: ${pokemon.weakness}</li>
