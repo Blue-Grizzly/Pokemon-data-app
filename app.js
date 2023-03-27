@@ -9,7 +9,7 @@ async function start(){
 }
 
 async function getPokemon(){
-    const response = await fetch("https://raw.githubusercontent.com/Blue-Grizzly/Pokemon-data-app/main/objects.JSON");
+    const response = await fetch("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
     const data = await response.json();
     return data;
 }
@@ -42,97 +42,96 @@ function showPokemon(pokemon) {
 function pokemonDialog(pokemon){
 
 
-    const calculatedStats = pokemon.statsAttack+pokemon.statsHP+pokemon.statsSpecialAttack+pokemon.statsSpecialDefence+pokemon.statsSpeed;
-    
-    let typeTheme
+    const calculatedStats = pokemon.statsAttack*1+pokemon.statsDefence*1+pokemon.statsHP*1+pokemon.statsSpecialAttack*1+pokemon.statsSpecialDefence*1+pokemon.statsSpeed*1;
+    let evMessage
+    let type
     
     if(pokemon.type == "Fire" || pokemon.type == "fire"){
-        typeTheme = "FireTheme"
+        type = "Fire"
     } else if(pokemon.type == "Water" || pokemon.type == "water") {
-        typeTheme = "WaterTheme"
+        type = "Water"
     } else if(pokemon.type == "Electric" || pokemon.type == "electric") {
-        typeTheme = "ElectricTheme"
+        type = "Electric"
     } else if(pokemon.type == "Ground" || pokemon.type == "ground") {
-        typeTheme = "GroundTheme"
+        type = "Ground"
     } else if(pokemon.type == "Rock" || pokemon.type == "rock") {
-        typeTheme = "RockTheme"
+        type = "Rock"
     } else if(pokemon.type == "Normal" || pokemon.type == "normal") {
-        typeTheme = "NormalTheme"
+        type = "Normal"
     } else if(pokemon.type == "Grass" || pokemon.type == "grass") {
-        typeTheme = "GrassTheme"
+        type = "Grass"
     } else if(pokemon.type == "Ice" || pokemon.type == "ice") {
-        typeTheme = "IceTheme"
+        type = "Ice"
     } else if(pokemon.type == "Fighting" || pokemon.type == "fighting") {
-        typeTheme = "FightingTheme"
+        type = "Fighting"
     } else if(pokemon.type == "Poison" || pokemon.type == "poison") {
-        typeTheme = "PoisonTheme"
+        type = "Poison"
     } else if(pokemon.type == "Flying" || pokemon.type == "flying") {
-        typeTheme = "FlyingTheme"
+        type = "Flying"
     } else if(pokemon.type == "Psychic" || pokemon.type == "psychic") {
-        typeTheme = "PsyichicTheme"
+        type = "Psyichic"
     } else if(pokemon.type == "Bug" || pokemon.type == "bug") {
-        typeTheme = "BugTheme"
+        type = "Bug"
     } else if(pokemon.type == "Ghost" || pokemon.type == "ghost") {
-        typeTheme = "GhostTheme"
+        type = "Ghost"
     } else if(pokemon.type == "Dark" || pokemon.type == "dark") {
-        typeTheme = "DarkTheme"
+        type = "Dark"
     } else if(pokemon.type == "Dragon" || pokemon.type == "dragon") {
-        typeTheme = "DragonTheme"
+        type = "Dragon"
     } else if(pokemon.type == "Steel" || pokemon.type == "steel") {
-        typeTheme = "SteelTheme"
+        type = "Steel"
     } else if(pokemon.type == "Fairy" || pokemon.type == "fairy") {
-        typeTheme = "FairyTheme"
+        type = "Fairy"
     } else{
-        typeTheme = "NormalTheme"
+        type = "Normal"
     }
 
+    let typeTheme = `${type}Theme`
+
+    if (pokemon.canEvolve === true){
+         evMessage = `This pokémon can  evolve.`
+    } else if(pokemon.canEvolve === false){
+         evMessage = `This pokémon can not evolve.`
+    }
+
+
     document.querySelector("#detailView").classList.add(typeTheme);
-    
-    const myHTML = /*html*/`
-    <section>
-        <ul>
-            <img src=${pokemon.image}>
-            <li>Pokémon name: ${pokemon.name}</li>
-            <li>Pokédex #${pokemon.dexindex}</li>
-            <li>Pokédex entry: ${pokemon.desciption}</li>
-            <li>Ability: ${pokemon.ability}</li>
-            <li>Footprint: <img src=${pokemon.footprint} class="footPrint"></li>
-            <li>Type: ${pokemon.type}</li>
-            <li>Subtype: ${pokemon.subtype}</li>
-            <li>Weakness: ${pokemon.weakness}</li>
-            <li>Gender: ${pokemon.gender}</li>
-            <li>Weight: ${pokemon.weight}</li>
-            <li>Height: ${pokemon.height}</li>
-            <li>Gen: ${pokemon.generation}</li>
-            <li>Game Version: ${pokemon.spilversion}</li>
-            <li>Can evolve: ${pokemon.canEvolve}</li>
-            <li>HP: ${pokemon.statsHP}</li>
-            <li>Attack: ${pokemon.statsAttack}</li>
-            <li>Special Attack: ${pokemon.statsSpecialAttack}</li>
-            <li>Special Defence: ${pokemon.statsSpecialDefence}</li>
-            <li>Speed: ${pokemon.statsSpeed}</li>
-            <li>Total stats:${calculatedStats}</li>
-        </ul>
-        <form method="dialog">
-		<button>Close</button>
-        </form>
-    </section>
-    `;
+
+    document.querySelector("#pokedexEntry").textContent = `${pokemon.description}`
+    document.querySelector("#pokemonImage").src = `${pokemon.image}`;
+    document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`;
+    document.querySelector("#pokemonName").textContent = `${pokemon.name}`;
+    document.querySelector("#dexIndex").textContent = `${pokemon.dexindex}`;
+    document.querySelector("#ability").textContent = `${pokemon.ability}`;
+    document.querySelector("#pokemonType").textContent = `${pokemon.type}`;
+    document.querySelector("#pokemonSubtype").textContent = `${pokemon.subtype}`;
+    document.querySelector("#weakness").textContent = `${pokemon.weakness}`;
+    document.querySelector("#gender").textContent = `${pokemon.gender}`;
+    document.querySelector("#weight").textContent = `${pokemon.weight}`;
+    document.querySelector("#height").textContent = `${pokemon.height}`;
+    document.querySelector("#generation").textContent = `${pokemon.generation}`;
+    document.querySelector("#gameVersion").textContent = `${pokemon.spilversion}`;
+    document.querySelector("#canEvolve").textContent = evMessage;
+    document.querySelector("#statHP").textContent = `${pokemon.statsHP}`;
+    document.querySelector("#statDefence").textContent = `${pokemon.statsDefence}`;
+    document.querySelector("#statAttack").textContent = `${pokemon.statsAttack}`;
+    document.querySelector("#statSpAttack").textContent = `${pokemon.statsSpecialAttack}`;
+    document.querySelector("#statSpDefence").textContent = pokemon.statsSpecialDefence;
+    document.querySelector("#statSpeed").textContent = pokemon.statsSpeed
+    document.querySelector("#statTotal").textContent = calculatedStats;
+
+
     document.querySelector("#detailView").addEventListener("close", closedModal)
-    document.querySelector("#detailView").insertAdjacentHTML("beforeend", myHTML);
 }
 
 function closedModal(){
     document.querySelector("#detailView").classList.remove
         ("NormalTheme", "FireTheme", "WaterTheme", "GrassTheme", "ElectricTheme", "IceTheme", "FightingTheme", "PoisonTheme", "GroundTheme", "FlyingTheme", "PsychicTheme", "BugTheme", "RockTheme", "GhostTheme", "DarkTheme", "DragonTheme", "SteelTheme", "FairyTheme");
     //All the themes
-        document.querySelector("#detailView section:last-child").remove();
 }
 
 
 // missing functions I think I want
 
-// function calcStats(){}
 // function showType(){}
 // function showDesciption(){}
-// function booleanTranslate(){}

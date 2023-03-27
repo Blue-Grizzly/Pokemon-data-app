@@ -2,9 +2,6 @@ html{
     font-family: Arial, Helvetica, sans-serif;    
     background: rgb(200, 50, 50);
     /* background: linear-gradient(90deg, rgba(174,238,235,1) 0%, rgba(96,222,240,1) 50%, rgba(148,187,233,1) 100%); */
-    border-color: rgb();
-
-
 }
 
 dialog{
@@ -27,90 +24,73 @@ img.footPrint{
 
 .FireTheme{
     background: rgb(238,129,48);
-    background: radial-gradient(circle, rgba(238,129,48,1) 0%, rgba(238,129,48,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .NormalTheme{
     background: rgb(168,167,122);
-    background: radial-gradient(circle, rgba(168,167,122,1) 0%, rgba(168,167,122,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .WaterTheme{
     background: rgb(99,144,240);
-    background: radial-gradient(circle, rgba(99,144,240,1) 0%, rgba(99,144,240,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .ElectricTheme{
     background: rgb(247,208,44);
-    background: radial-gradient(circle, rgba(247,208,44,1) 0%, rgba(247,208,44,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .GrassTheme{
     background: rgb(122,199,76);
-    background: radial-gradient(circle, rgba(122,199,76,1) 0%, rgba(122,199,76,1) 70%, rgba(223, 223, 223) 100%); 
 }
 
 .IceTheme{
     background: rgb(150,217,214);
-    background: radial-gradient(circle, rgba(150,217,214,1) 0%, rgba(150,217,214,1) 70%, rgba(223, 223, 223) 100%); 
 }
 
 .FightingTheme{
     background: rgb(194,46,40);
-    background: radial-gradient(circle, rgba(194,46,40,1) 0%, rgba(194,46,40,1) 70%, rgba(223, 223, 223) 100%);}
+}
 
 .PoisonTheme{
     background: rgb(163,62,161);
-    background: radial-gradient(circle, rgba(163,62,161,1) 0%, rgba(163,62,161,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .GroundTheme{
     background: rgb(226,191,101);
-    background: radial-gradient(circle, rgba(226,191,101,1) 0%, rgba(226,191,101,1) 70%, rgba(223, 223, 223) 100%);}
-
+}
 
 .FlyingTheme{
     background: rgb(169,143,243);
-    background: radial-gradient(circle, rgba(169,143,243,1) 0%, rgba(169,143,243,1) 70%, rgba(223, 223, 223) 100%);   
 }
 
 .PsychicTheme{
     background: rgb(249,85,135);
-    background: radial-gradient(circle, rgba(249,85,135,1) 0%, rgba(249,85,135,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .BugTheme{
     background: rgb(166,185,26);
-    background: radial-gradient(circle, rgba(166,185,26,1) 0%, rgba(166,185,26,1) 70%, rgba(223, 223, 223) 100%);}
-
+}
 .RockTheme{
     background: rgb(182,161,54);
-    background: radial-gradient(circle, rgba(182,161,54,1) 0%, rgba(182,161,54,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .GhostTheme{
     background: rgb(115,87,151);
-    background: radial-gradient(circle, rgba(115,87,151,1) 0%, rgba(115,87,151,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .DragonTheme{
     background: rgb(111,53,252);
-    background: radial-gradient(circle, rgba(111,53,252,1) 0%, rgba(111,53,252,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .DarkTheme{
     background: rgb(112,87,70);
-    background: radial-gradient(circle, rgba(112,87,70,1) 0%, rgba(112,87,70,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .SteelTheme{
     background: rgb(183,183,206);
-    background: radial-gradient(circle, rgba(183,183,206,1) 0%, rgba(183,183,206,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 .FairyTheme{
     background: rgb(214,133,173);
-    background: radial-gradient(circle, rgba(214,133,173,1) 0%, rgba(214,133,173,1) 70%, rgba(223, 223, 223) 100%);
 }
 
 /* -------------------------------------------------------------------- */
@@ -156,7 +136,6 @@ img.footPrint{
     box-shadow: 0 1px 10px 0;
 }
 
-
 .grid-item p {
     margin: 0.3em 0;
 }
@@ -194,7 +173,7 @@ button {
 }
 
 dialog::backdrop {
-    background: rgb(47, 51, 51);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 ul{
@@ -204,7 +183,7 @@ ul{
 
 li{
     color: #fff;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    text-shadow: 0.5px 0 0 #000, 0 -0.5px 0 #000, 0 0.5px 0 #000, -0.5px 0 0 #000;
 
 }
 
