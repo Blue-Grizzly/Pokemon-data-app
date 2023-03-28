@@ -47,57 +47,57 @@ function pokemonDialog(pokemon){
     let type
     
     if(pokemon.type == "Fire" || pokemon.type == "fire"){
-        type = "Fire"
+        type = "Fire";
     } else if(pokemon.type == "Water" || pokemon.type == "water") {
-        type = "Water"
+        type = "Water";
     } else if(pokemon.type == "Electric" || pokemon.type == "electric") {
-        type = "Electric"
+        type = "Electric";
     } else if(pokemon.type == "Ground" || pokemon.type == "ground") {
-        type = "Ground"
+        type = "Ground";
     } else if(pokemon.type == "Rock" || pokemon.type == "rock") {
-        type = "Rock"
+        type = "Rock";
     } else if(pokemon.type == "Normal" || pokemon.type == "normal") {
-        type = "Normal"
+        type = "Normal";
     } else if(pokemon.type == "Grass" || pokemon.type == "grass") {
-        type = "Grass"
+        type = "Grass";
     } else if(pokemon.type == "Ice" || pokemon.type == "ice") {
-        type = "Ice"
+        type = "Ice";
     } else if(pokemon.type == "Fighting" || pokemon.type == "fighting") {
-        type = "Fighting"
+        type = "Fighting";
     } else if(pokemon.type == "Poison" || pokemon.type == "poison") {
-        type = "Poison"
+        type = "Poison";
     } else if(pokemon.type == "Flying" || pokemon.type == "flying") {
-        type = "Flying"
+        type = "Flying";
     } else if(pokemon.type == "Psychic" || pokemon.type == "psychic") {
-        type = "Psyichic"
+        type = "Psyichic";
     } else if(pokemon.type == "Bug" || pokemon.type == "bug") {
-        type = "Bug"
+        type = "Bug";
     } else if(pokemon.type == "Ghost" || pokemon.type == "ghost") {
-        type = "Ghost"
+        type = "Ghost";
     } else if(pokemon.type == "Dark" || pokemon.type == "dark") {
-        type = "Dark"
+        type = "Dark";
     } else if(pokemon.type == "Dragon" || pokemon.type == "dragon") {
-        type = "Dragon"
+        type = "Dragon";
     } else if(pokemon.type == "Steel" || pokemon.type == "steel") {
-        type = "Steel"
+        type = "Steel";
     } else if(pokemon.type == "Fairy" || pokemon.type == "fairy") {
-        type = "Fairy"
+        type = "Fairy";
     } else{
-        type = "Normal"
+        type = "Normal";
     }
 
-    let typeTheme = `${type}Theme`
+    let typeTheme = `${type}Theme`;
 
     if (pokemon.canEvolve === true){
-         evMessage = `This pokémon can  evolve.`
+         evMessage = `This pokémon can  evolve.`;
     } else if(pokemon.canEvolve === false){
-         evMessage = `This pokémon can not evolve.`
+         evMessage = `This pokémon can not evolve.`;
     }
 
 
     document.querySelector("#detailView").classList.add(typeTheme);
 
-    document.querySelector("#pokedexEntry").textContent = `${pokemon.description}`
+    document.querySelector("#pokedexEntry").textContent = `${pokemon.description}`;
     document.querySelector("#pokemonImage").src = `${pokemon.image}`;
     // document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`;
     document.querySelector("#pokemonName").textContent = `${pokemon.name}`;
@@ -117,11 +117,11 @@ function pokemonDialog(pokemon){
     document.querySelector("#statAttack").textContent = `${pokemon.statsAttack}`;
     document.querySelector("#statSpAttack").textContent = `${pokemon.statsSpecialAttack}`;
     document.querySelector("#statSpDefence").textContent = pokemon.statsSpecialDefence;
-    document.querySelector("#statSpeed").textContent = pokemon.statsSpeed
+    document.querySelector("#statSpeed").textContent = pokemon.statsSpeed;
     document.querySelector("#statTotal").textContent = calculatedStats;
 
 
-    document.querySelector("#detailView").addEventListener("close", closedModal)
+    document.querySelector("#detailView").addEventListener("close", closedModal);
 }
 
 function closedModal(){
