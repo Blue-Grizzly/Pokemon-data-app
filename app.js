@@ -99,7 +99,7 @@ function pokemonDialog(pokemon){
 
     document.querySelector("#pokedexEntry").textContent = `${pokemon.description}`
     document.querySelector("#pokemonImage").src = `${pokemon.image}`;
-    document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`;
+    // document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`;
     document.querySelector("#pokemonName").textContent = `${pokemon.name}`;
     document.querySelector("#dexIndex").textContent = `${pokemon.dexindex}`;
     document.querySelector("#ability").textContent = `${pokemon.ability}`;
