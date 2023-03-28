@@ -11,34 +11,40 @@
 <body>
     <header><h1>Pokédex Data Project</h1></header>
     <section id="pokemonList" class="grid-container">
-        <dialog id="detailView">
-                <div id="pokemonName"></div>
-                <img id="pokemonImage" src="">
-                <div id="pokedexEntry"></div>
-                <img id="pokemonFootPrint" src="" class="footPrint">
-                <div id="dexIndex"></div>
-                <div id="ability"></div>
-                <div id="pokemonType"></div>
-                <div id="pokemonSubtype"></div>
-                <div id="weakness"></div>
-                <div id="gender"></div>
-                <div id="weight"></div>
-                <div id="height"></div>
-                <div id="generation"></div>
-                <div id="gameVersion"></div>
-                <div id="canEvolve"></div>
-                <div id="statHP"></div>
-                <div id="statAttack"></div>
-                <div id="statDefence"></div>
-                <div id="statSpAttack"></div>
-                <div id="statSpDefence"></div>
-                <div id="statSpeed"></div>
-                <div id="statTotal"></div>
-            <form method="dialog">
+    </section>
+         <dialog id="detailView">
+            <section class="modal-gridcontainer">
+                <h2 id="pokemonName" class="modal-name"></h2>
+                <img id="pokemonImage" src="" class="modal-image">
+                <ul class="modal-description">
+                    <p id="dexIndex"></p>
+                    <p id="pokedexEntry"></p>
+                </ul>
+                <ul class="modal-list">
+                    <li id="ability"></li>
+                    <li id="pokemonType"></li>
+                    <li id="pokemonSubtype"></li>
+                    <li id="weakness"></li>
+                    <li id="gender"></li>
+                    <li id="weight"></li>
+                    <li id="height"></li>
+                    <li id="generation"></li>
+                    <li id="gameVersion"></li>
+                    <li id="canEvolve"></li>
+                    <li id="statHP"></li>
+                    <li id="statAttack"></li>
+                    <li id="statDefence"></li>
+                    <li id="statSpAttack"></li>
+                    <li id="statSpDefence"></li>
+                    <li id="statSpeed"></li>
+                    <li id="statTotal"></li>
+                    <img id="pokemonFootPrint" src="" class="footPrint">
+                </ul>
+                <form method="dialog" class="modal-btn">
             <button>Close</button>
             </form>
         </dialog>
-    </section>
+       </section>
     <script src="app.js"></script>
     <footer> This is a personal project, I do not own any of the characters depicted. All rights to their respective owners at: ©2023 Pokémon. ©1995–2023 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon, Pokémon character names, Nintendo Switch, Nintendo 3DS, Nintendo DS, Wii, Wii U, and WiiWare are trademarks of Nintendo. </footer>
 </body>

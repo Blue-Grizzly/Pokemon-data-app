@@ -41,49 +41,50 @@ function showPokemon(pokemon) {
 
 function pokemonDialog(pokemon){
 
+    let typeTest = pokemon.type;
+
 
     const calculatedStats = pokemon.statsAttack*1+pokemon.statsDefence*1+pokemon.statsHP*1+pokemon.statsSpecialAttack*1+pokemon.statsSpecialDefence*1+pokemon.statsSpeed*1;
+   
     let evMessage
     let type
     
-    if(pokemon.type == "Fire" || pokemon.type == "fire"){
+    if(typeTest.includes("Fire") === true || typeTest.includes("fire") === true){
         type = "Fire";
-    } else if(pokemon.type == "Water" || pokemon.type == "water") {
+    } else if(typeTest.includes("Water") === true || typeTest.includes("water") === true) {
         type = "Water";
-    } else if(pokemon.type == "Electric" || pokemon.type == "electric") {
+    } else if(typeTest.includes("Electric") === true || typeTest.includes("electric") === true) {
         type = "Electric";
-    } else if(pokemon.type == "Ground" || pokemon.type == "ground") {
+    } else if(typeTest.includes("Ground") === true || typeTest.includes("ground") === true) {
         type = "Ground";
-    } else if(pokemon.type == "Rock" || pokemon.type == "rock") {
+    } else if(typeTest.includes("Rock") === true || typeTest.includes("rock") === true) {
         type = "Rock";
-    } else if(pokemon.type == "Normal" || pokemon.type == "normal") {
+    } else if(typeTest.includes("Normal") === true || typeTest.includes("normal") == true) {
         type = "Normal";
-    } else if(pokemon.type == "Grass" || pokemon.type == "grass") {
+    } else if(typeTest.includes("Grass") === true || typeTest.includes == "grass") {
         type = "Grass";
-    } else if(pokemon.type == "Ice" || pokemon.type == "ice") {
+    } else if(typeTest.includes("Ice") === true || typeTest.includes("ice") === true ) {
         type = "Ice";
-    } else if(pokemon.type == "Fighting" || pokemon.type == "fighting") {
+    } else if(typeTest.includes("Fighting") === true || typeTest.includes("fighting") === true) {
         type = "Fighting";
-    } else if(pokemon.type == "Poison" || pokemon.type == "poison") {
+    } else if(typeTest.includes("Poison") === true || typeTest.includes("poison") === true) {
         type = "Poison";
-    } else if(pokemon.type == "Flying" || pokemon.type == "flying") {
+    } else if(typeTest.includes("Flying") === true || typeTest.includes("flying") === true) {
         type = "Flying";
-    } else if(pokemon.type == "Psychic" || pokemon.type == "psychic") {
+    } else if(typeTest.includes("Psychic") === true || typeTest.includes("psychic") === true) {
         type = "Psyichic";
-    } else if(pokemon.type == "Bug" || pokemon.type == "bug") {
+    } else if(typeTest.includes("Bug") === true || typeTest.includes("bug") === true) {
         type = "Bug";
-    } else if(pokemon.type == "Ghost" || pokemon.type == "ghost") {
+    } else if(typeTest.includes("Ghost") === true || typeTest.includes("ghost") === true) {
         type = "Ghost";
-    } else if(pokemon.type == "Dark" || pokemon.type == "dark") {
+    } else if(typeTest.includes("Dark") === true || typeTest.includes("dark") === true) {
         type = "Dark";
-    } else if(pokemon.type == "Dragon" || pokemon.type == "dragon") {
+    } else if(typeTest.includes("Dragon") === true || typeTest.includes("dragon") === true) {
         type = "Dragon";
-    } else if(pokemon.type == "Steel" || pokemon.type == "steel") {
+    } else if(typeTest.includes("Steel") === true || typeTest.includes("steel") === true) {
         type = "Steel";
-    } else if(pokemon.type == "Fairy" || pokemon.type == "fairy") {
+    } else if(typeTest.includes("Fairy") === true || typeTest.includes("fairy") === true) {
         type = "Fairy";
-    } else{
-        type = "Normal";
     }
 
     let typeTheme = `${type}Theme`;
@@ -129,9 +130,3 @@ function closedModal(){
         ("NormalTheme", "FireTheme", "WaterTheme", "GrassTheme", "ElectricTheme", "IceTheme", "FightingTheme", "PoisonTheme", "GroundTheme", "FlyingTheme", "PsychicTheme", "BugTheme", "RockTheme", "GhostTheme", "DarkTheme", "DragonTheme", "SteelTheme", "FairyTheme");
     //All the themes
 }
-
-
-// missing functions I think I want
-
-// function showType(){}
-// function showDesciption(){}
