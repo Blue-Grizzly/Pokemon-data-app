@@ -100,26 +100,32 @@ function pokemonDialog(pokemon){
 
     document.querySelector("#pokedexEntry").textContent = `${pokemon.description}`;
     document.querySelector("#pokemonImage").src = `${pokemon.image}`;
-    // document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`;
+    // document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`; removed as it isn't feasable.
     document.querySelector("#pokemonName").textContent = `${pokemon.name}`;
-    document.querySelector("#dexIndex").textContent = `${pokemon.dexindex}`;
-    document.querySelector("#ability").textContent = `${pokemon.ability}`;
-    document.querySelector("#pokemonType").textContent = `${pokemon.type}`;
-    document.querySelector("#pokemonSubtype").textContent = `${pokemon.subtype}`;
-    document.querySelector("#weakness").textContent = `${pokemon.weakness}`;
+    document.querySelector("#dexIndex").textContent = `#${pokemon.dexindex}`;
+    document.querySelector("#ability").textContent = `Ability: ${pokemon.ability}`;
+    document.querySelector("#pokemonType").textContent = `Type: ${pokemon.type}`;
+
+    if (pokemon.subtype != undefined || pokemon.subtype != null){
+    document.querySelector("#pokemonSubtype").textContent = `Subtype: ${pokemon.subtype}`;
+    } else{
+        document.querySelector("#pokemonSubtype").textContent = "";
+    }
+    
+    document.querySelector("#weakness").textContent = `Weaknesses: ${pokemon.weaknesses}`;
     document.querySelector("#gender").textContent = `${pokemon.gender}`;
-    document.querySelector("#weight").textContent = `${pokemon.weight}`;
-    document.querySelector("#height").textContent = `${pokemon.height}`;
-    document.querySelector("#generation").textContent = `${pokemon.generation}`;
-    document.querySelector("#gameVersion").textContent = `${pokemon.spilversion}`;
+    document.querySelector("#weight").textContent = `Weight: ${pokemon.weight}g`;
+    document.querySelector("#height").textContent = `Height: ${pokemon.height}cm`;
+    document.querySelector("#generation").textContent = `Generation introduced: ${pokemon.generation}`;
+    document.querySelector("#gameVersion").textContent = `Game versions available: ${pokemon.spilversion}`;
     document.querySelector("#canEvolve").textContent = evMessage;
-    document.querySelector("#statHP").textContent = `${pokemon.statsHP}`;
-    document.querySelector("#statDefence").textContent = `${pokemon.statsDefence}`;
-    document.querySelector("#statAttack").textContent = `${pokemon.statsAttack}`;
-    document.querySelector("#statSpAttack").textContent = `${pokemon.statsSpecialAttack}`;
-    document.querySelector("#statSpDefence").textContent = pokemon.statsSpecialDefence;
-    document.querySelector("#statSpeed").textContent = pokemon.statsSpeed;
-    document.querySelector("#statTotal").textContent = calculatedStats;
+    document.querySelector("#statHP").textContent = `Health: ${pokemon.statsHP}`;
+    document.querySelector("#statDefence").textContent = `Defence: ${pokemon.statsDefence}`;
+    document.querySelector("#statAttack").textContent = `Attack: ${pokemon.statsAttack}`;
+    document.querySelector("#statSpAttack").textContent = `SP Attack: ${pokemon.statsSpecialAttack}`;
+    document.querySelector("#statSpDefence").textContent = `SP Defence: ${pokemon.statsSpecialDefence}`;
+    document.querySelector("#statSpeed").textContent = `Speed: ${pokemon.statsSpeed}`;
+    document.querySelector("#statTotal").textContent = `Total: ${calculatedStats}`;
 
 
     document.querySelector("#detailView").addEventListener("close", closedModal);

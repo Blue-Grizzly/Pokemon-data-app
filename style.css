@@ -3,11 +3,6 @@ html{
     background: rgb(200, 50, 50);
 }
 
-dialog{
-    padding: 2em 1em;
-    width: 60vw;
-}
-
 p{
     margin: 0;
 }
@@ -34,8 +29,12 @@ img.footPrint{
 .modal-description { 
     grid-area: 2 / 3 / 3 / 6; 
 }
-.modal-list { 
-    grid-area: 3 / 1 / 5 / 6; 
+.modal-list1 { 
+    grid-area: 3 / 1 / 5 / 3; 
+}
+.modal-list2{
+    grid-area: 3 / 3 / 5 / 5;
+
 }
 .modal-btn { 
     grid-area: 5 / 2 / 6 / 4;
@@ -47,7 +46,34 @@ img.footPrint{
 .modal-name { 
     grid-area: 1 / 3 / 2 / 5; 
 }
-    
+
+form {
+    margin: 2em auto 0;
+    padding: 1em 1em 2em;
+    text-align: center;
+}
+
+button {
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    width: 100%;
+    max-width: 380px;
+    cursor: pointer;
+}
+
+dialog{
+    padding: 2em 1em;
+    width: 60vw;
+}
+
+ul{
+    list-style: none;
+}
 
 /* ----------------------- Themes--------------------- */
 
@@ -131,6 +157,17 @@ img.footPrint{
     padding: 1em;
 }
 
+.grid-item {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    padding: 1.5em;
+    background: rgba(223, 223, 223);
+}
+
+
+.grid-item:hover {
+    box-shadow: 0 5px 10px 0 white;
+}
+
 @media (min-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
@@ -154,36 +191,6 @@ img.footPrint{
     img{
         width: 10vw;
     }
-}
-
-
-.grid-item {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    padding: 1.5em;
-    background: rgba(223, 223, 223);
-}
-
-.grid-item:hover {
-    box-shadow: 0 1px 10px 0;
-}
-
-form {
-    margin: 2em auto 0;
-    padding: 1em 1em 2em;
-    text-align: center;
-}
-
-button {
-    font-weight: 300;
-    font-size: 1em;
-    text-align: center;
-    border: none;
-    border-radius: 0;
-    text-transform: uppercase;
-    padding: 0.5em 1em;
-    width: 100%;
-    max-width: 380px;
-    cursor: pointer;
 }
 
 dialog::backdrop {
