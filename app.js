@@ -2,18 +2,25 @@
 
 window.addEventListener("load", start);
 
-
 async function start(){
  const pokemon = await getPokemon();
+ pokemon.sort(sortBydexNumber);
  showAllPokemon(pokemon);
 }
 
+// Gets JSON data v
 async function getPokemon(){
     const response = await fetch("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
     const data = await response.json();
     return data;
 }
 
+// Sorts pokemon by their Pokedex number v 
+function sortBydexNumber(pokemonA, pokemonB){
+    return pokemonA.dexindex - pokemonB.dexindex;
+}
+
+// Creates the pokemon grid/list with the html in showPokemon for all pokemon in data
 function showAllPokemon(pokemonList) {
     for (const pokemon of pokemonList) {
         showPokemon(pokemon);
@@ -37,18 +44,16 @@ function showPokemon(pokemon) {
     }
 }
 
-
-
+// The engine room v
 function pokemonDialog(pokemon){
 
+// Variables v
     let typeTest = pokemon.type;
-
-
-    const calculatedStats = pokemon.statsAttack*1+pokemon.statsDefence*1+pokemon.statsHP*1+pokemon.statsSpecialAttack*1+pokemon.statsSpecialDefence*1+pokemon.statsSpeed*1;
-   
     let evMessage
     let type
     
+    
+// The test for what type the clicked pokemon has to determine what color the background will be on the modal v
     if(typeTest.includes("Fire") === true || typeTest.includes("fire") === true){
         type = "Fire";
     } else if(typeTest.includes("Water") === true || typeTest.includes("water") === true) {
@@ -72,7 +77,7 @@ function pokemonDialog(pokemon){
     } else if(typeTest.includes("Flying") === true || typeTest.includes("flying") === true) {
         type = "Flying";
     } else if(typeTest.includes("Psychic") === true || typeTest.includes("psychic") === true) {
-        type = "Psyichic";
+        type = "Psychic";
     } else if(typeTest.includes("Bug") === true || typeTest.includes("bug") === true) {
         type = "Bug";
     } else if(typeTest.includes("Ghost") === true || typeTest.includes("ghost") === true) {
@@ -86,28 +91,30 @@ function pokemonDialog(pokemon){
     } else if(typeTest.includes("Fairy") === true || typeTest.includes("fairy") === true) {
         type = "Fairy";
     }
-
+    
     let typeTheme = `${type}Theme`;
-
+    
+// Creates message for wether or not the pokemon can be evolved v
     if (pokemon.canEvolve === true){
-         evMessage = `This pokémon can  evolve.`;
+        evMessage = `This pokémon can  evolve.`;
     } else if(pokemon.canEvolve === false){
-         evMessage = `This pokémon can not evolve.`;
+        evMessage = `This pokémon can not evolve.`;
     }
+// Adds up the stats for the total stats data point v
+    const calculatedStats = pokemon.statsAttack+pokemon.statsDefence+pokemon.statsHP+pokemon.statsSpecialAttack+pokemon.statsSpecialDefence+pokemon.statsSpeed;
 
-
+// Dom manipulation v
     document.querySelector("#detailView").classList.add(typeTheme);
-
     document.querySelector("#pokedexEntry").textContent = `${pokemon.description}`;
     document.querySelector("#pokemonImage").src = `${pokemon.image}`;
-    // document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`; removed as it isn't feasable.
+    // document.querySelector("#pokemonFootPrint").src = `pokemon.footprint`; removed due to copy right concerns.
     document.querySelector("#pokemonName").textContent = `${pokemon.name}`;
     document.querySelector("#dexIndex").textContent = `#${pokemon.dexindex}`;
     document.querySelector("#ability").textContent = `Ability: ${pokemon.ability}`;
     document.querySelector("#pokemonType").textContent = `Type: ${pokemon.type}`;
-
+    
     if (pokemon.subtype != undefined || pokemon.subtype != null){
-    document.querySelector("#pokemonSubtype").textContent = `Subtype: ${pokemon.subtype}`;
+        document.querySelector("#pokemonSubtype").textContent = `Subtype: ${pokemon.subtype}`;
     } else{
         document.querySelector("#pokemonSubtype").textContent = "";
     }
@@ -127,12 +134,13 @@ function pokemonDialog(pokemon){
     document.querySelector("#statSpeed").textContent = `Speed: ${pokemon.statsSpeed}`;
     document.querySelector("#statTotal").textContent = `Total: ${calculatedStats}`;
 
-
+// Waits for the modal to close so the background can be removed v
     document.querySelector("#detailView").addEventListener("close", closedModal);
 }
+
 
 function closedModal(){
     document.querySelector("#detailView").classList.remove
         ("NormalTheme", "FireTheme", "WaterTheme", "GrassTheme", "ElectricTheme", "IceTheme", "FightingTheme", "PoisonTheme", "GroundTheme", "FlyingTheme", "PsychicTheme", "BugTheme", "RockTheme", "GhostTheme", "DarkTheme", "DragonTheme", "SteelTheme", "FairyTheme");
-    //All the themes
+    //Removes all the themes ^
 }
